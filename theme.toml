@@ -12,5 +12,5 @@ features = ["terminal-like"]
 min_version = "0.84.0"
 
 [author]
-  name = ""
-  homepage = ""
+  name = "Yuta Kurosawa"
+  homepage = "https://unknownsky.net/"
