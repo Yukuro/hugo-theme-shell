@@ -1,0 +1,12 @@
+{{ define "main" }}
+    {{ $sass := resources.Get "sass/activity.scss" }}
+    {{ $style := $sass | resources.ToCSS }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}">
+
+    {{ $title := printf "<h1 id='title'>%s</h1>" .Title}}
+    {{ $content := .Content }}
+
+    {{ $payload := delimit (slice "<span id=terminal>" $title $content "</span>") "" }}
+    {{ $delay := $.Site.Params.Terminal.activityDelay}}
+    {{ partial "partials/typewriter.html" (dict "context" . "payload" $payload "delay" $delay )}}
+{{ end }}

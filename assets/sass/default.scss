@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
+
+#content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 600px;
+    height: 600px;
+    min-width: 250px;
+    max-width: 600px;
+    margin-left: -300px;
+    margin-top: -300px;
+
+    font-family: 'Inconsolata', monospace;
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: normal;
+}

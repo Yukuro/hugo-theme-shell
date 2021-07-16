@@ -1,0 +1,38 @@
+{{ define "main" }}
+    {{ $env := printf "<strong><span id=user>%s@%s</span><span id=terminal>:</span><span id=dir>~/%s</span></strong><span id=terminal>$</span>" .Site.Params.Terminal.userName .Site.Params.Terminal.pcName "" | safeHTML }}
+    {{ $cd := printf "%s <span id=terminal>cd %s</span><br>" $env .Site.Params.Terminal.workDir | safeHTML }}
+    {{ $env := printf "<strong><span id=user>%s@%s</span><span id=terminal>:</span><span id=dir>~/%s</span></strong><span id=terminal>$</span>" .Site.Params.Terminal.userName .Site.Params.Terminal.pcName .Site.Params.Terminal.workDir | safeHTML }}
+    {{ $cat := printf "%s <span id=terminal>cat %s</span><br>" $env .Site.Params.Terminal.profile | safeHTML }}
+    {{ $description := printf "<span id=terminal>%s</span>" .Site.Params.Terminal.description | replaceRE "\n" "<br>" | safeHTML}}
+
+    {{ $tree := "" }}
+    {{ $leaf := "" }}
+    {{ if .Site.Params.Tree.use }}
+    {{ $tree = printf "%s <span id=terminal>tree ./%s/</span><br>" $env .Site.Params.Tree.folderName}}
+    {{ $leaf = printf "%s<strong><span id=dir>./%s/</span></strong><br>" $leaf .Site.Params.Tree.folderName }}
+        {{ range $index, $val := .Site.Params.Tree.files }}
+            {{ $ac := index $val 0}}
+            {{ $link := index $val 1}}
+            {{ if ne (substr $link 0 4) "http"}}
+                {{ $l := $.Site.GetPage $link }}
+                {{ $link = $l.Permalink }}
+            {{ end }}
+            {{ if eq (add $index 1) (len $.Site.Params.Tree.files) }}
+            {{ $leaf = printf "<span id=terminal>%s└── <a href='%s'>%s</a></span><br>" $leaf $link $ac}}
+            {{ else }}
+            {{ $leaf = printf "<span id=terminal>%s├── <a href='%s'>%s</a></span><br>" $leaf $link $ac}}
+            {{ end }}
+        {{ end }}
+    {{ end }}
+
+    {{ $end := $env }}
+
+    {{ $sass := resources.Get "sass/default.scss" }}
+    {{ $style := $sass | resources.ToCSS }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}">
+
+    {{ $payload := delimit (slice $cd $cat $description $tree $leaf $end) "" }}
+    {{ $delay := $.Site.Params.Terminal.terminalDelay}}
+    {{ partial "partials/typewriter.html" (dict "context" . "payload" $payload "delay" $delay )}}
+
+{{ end }}

@@ -1,0 +1,14 @@
+{{ $random := delimit (seq 9 | shuffle) "" }}
+{{ $tpid := md5 $random }}
+
+<div id = a{{ $tpid }}></div>
+
+<script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+
+<script type="text/javascript">
+    const instance = new Typewriter('#a{{ $tpid }}', {
+        strings: '{{ .Inner | replaceRE "\n" "<br>" | safeHTML }}',
+        delay: 20,
+        autoStart: true,
+    });
+</script>

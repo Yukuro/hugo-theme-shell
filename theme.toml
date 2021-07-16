@@ -1,0 +1,15 @@
+# theme.toml template for a Hugo theme
+# See https://github.com/gohugoio/hugoThemes#themetoml for an example
+
+name = "Shell"
+license = "MIT"
+licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE"
+description = "Hugo Shell theme : Terminal-like theme with selectable color schemes."
+homepage = "https://github.com/Yukuro/hugo-theme-shell/"
+tags = ["responsive", "minimal", "light", "personal", "dark", "portfolio"]
+features = ["terminal-like"]
+min_version = "0.84.0"
+
+[author]
+  name = ""
+  homepage = ""

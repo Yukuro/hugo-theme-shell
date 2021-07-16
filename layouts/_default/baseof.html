@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    {{ $sass := resources.Get "sass/white.scss" }}
+    {{ with (eq .Site.Params.Terminal.schema "monokai") }} {{ $sass = resources.Get "sass/monokai.scss" }} {{ end }}
+    {{ with (eq .Site.Params.Terminal.schema "powershell") }} {{ $sass = resources.Get "sass/powershell.scss" }} {{ end }}
+    {{ with (eq .Site.Params.Terminal.schema "gruvbox_light") }} {{ $sass = resources.Get "sass/gruvbox_light.scss" }} {{ end }}
+    {{ with (eq .Site.Params.Terminal.schema "gruvbox_dark") }} {{ $sass = resources.Get "sass/gruvbox_dark.scss" }} {{ end }}
+    {{ with (eq .Site.Params.Terminal.schema "solarized_light") }} {{ $sass = resources.Get "sass/solarized_light.scss" }} {{ end }}
+    {{ with (eq .Site.Params.Terminal.schema "solarized_dark") }} {{ $sass = resources.Get "sass/solarized_dark.scss" }} {{ end }}
+    {{ with (eq .Site.Params.Terminal.schema "ubuntu") }} {{ $sass = resources.Get "sass/ubuntu.scss" }} {{ end }}
+    {{ with (eq .Site.Params.Terminal.schema "retro") }} {{ $sass = resources.Get "sass/retro.scss" }} {{ end }}
+
+    {{- $style := $sass | resources.ToCSS -}}
+    <link rel="stylesheet" href="{{ $style.Permalink }}">
+
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+
+    {{- partial "head.html" . -}}
+    <body>
+        {{- partial "header.html" . -}}
+        <div id="content">
+        {{- block "main" . }}{{- end }}
+        </div>
+        {{- partial "footer.html" . -}}
+    </body>
+</html>
