@@ -3,6 +3,9 @@ Terminal-like theme with selectable color schemes.
 
 ![Screenshot](https://github.com/Yukuro/hugo-theme-shell/blob/master/images/motion.gif?raw=true)
 
+## Demo site
+- https://hugo-theme-shell.netlify.app/
+
 ## Features
 - Terminal-like portfolio
     - Selectable color schemes

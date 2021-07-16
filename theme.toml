@@ -6,8 +6,7 @@ license = "MIT"
 licenselink = "https://github.com/Yukuro/hugo-theme-shell/blob/master/LICENSE"
 description = "Hugo Shell theme : Terminal-like theme with selectable color schemes."
 homepage = "https://github.com/Yukuro/hugo-theme-shell/"
-# Todo
-demosite = ""
+demosite = "https://hugo-theme-shell.netlify.app/"
 tags = ["responsive", "minimal", "light", "personal", "dark", "portfolio"]
 features = ["terminal-like"]
 min_version = "0.84.0"
