@@ -9,7 +9,22 @@ Terminal-like theme with selectable color schemes.
 ## Features
 - Terminal-like portfolio
     - Selectable color schemes
-        - `monokai`, `powershell`, `gruvbox_light`, `gruvbox_dark`, `solarized_light`, `solarized_dark`, `ubuntu`, `retro`.
+        - `monokai`
+        ![monokai](https://github.com/Yukuro/hugo-theme-shell/blob/master/images/monokai.png?raw=true)
+        - `powershell`
+        ![powershell](https://github.com/Yukuro/hugo-theme-shell/blob/master/images/powershell.png?raw=true)
+        - `gruvbox_light`
+        ![gruvbox_light](https://github.com/Yukuro/hugo-theme-shell/blob/master/images/gruvbox_light.png?raw=true)
+        - `gruvbox_dark`
+        ![gruvbox_dark](https://github.com/Yukuro/hugo-theme-shell/blob/master/images/gruvbox_dark.png?raw=true)
+        - `solarized_light`
+        ![solarized_light](https://github.com/Yukuro/hugo-theme-shell/blob/master/images/solarized_light.png?raw=true)
+        - `solarized_dark`
+        ![solarized_dark](https://github.com/Yukuro/hugo-theme-shell/blob/master/images/solarized_dark.png?raw=true)
+        - `ubuntu`
+        ![ubuntu](https://github.com/Yukuro/hugo-theme-shell/blob/master/images/ubuntu.png?raw=true)
+        - `retro`
+        ![retro](https://github.com/Yukuro/hugo-theme-shell/blob/master/images/retro.png?raw=true)
 - Minimal design
 - Responsive
 
