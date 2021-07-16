@@ -27,8 +27,13 @@ ignoreErrors = ["error-remote-getjson"]
   pcName = "laptop"
   workDir = "mydir"
   profile = "profile.txt"
+
+  # Note: speed at which text is displayed on the terminal
   terminalDelay = 20
+
+  # Note: speed at which text is displayed on the activity pages
   activityDelay = 5
+  
   description = """
   Hi I am Jane Doe!
   Nice to meet you!
