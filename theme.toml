@@ -9,7 +9,7 @@ homepage = "https://github.com/Yukuro/hugo-theme-shell/"
 demosite = "https://hugo-theme-shell.netlify.app/"
 tags = ["responsive", "minimal", "light", "personal", "dark", "portfolio"]
 features = ["terminal-like"]
-min_version = "0.84.0"
+min_version = "0.85.0"
 
 [author]
   name = "Yuta Kurosawa"
