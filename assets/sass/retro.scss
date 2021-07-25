@@ -1,4 +1,4 @@
-$charcolor: black;
+$charcolor: #00f633;
 body {
     background: black;
 
@@ -17,4 +17,8 @@ body {
     .Typewriter__cursor {
         color: $charcolor;
     }
+}
+
+a {
+    color: $charcolor;
 }
