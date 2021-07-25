@@ -29,8 +29,8 @@ Terminal-like theme with selectable color schemes.
 - Responsive
 
 ## Requirements
-- Hugo Version 0.84.0 or higher
-    - Hugo extended version is required.
+- Hugo Version 0.85.0 or higher
+    - **Hugo extended version is required**.
 
 ## Installation
 ### Create a new website from scratch
@@ -39,14 +39,14 @@ hugo new site myportfolio
 cd myportfolio
 git init
 git submodule add https://github.com/Yukuro/hugo-theme-shell.git themes/hugo-theme-shell
-hugo server -t hugo-theme-shell -w
+hugo server -t hugo-theme-shell -w -D
 ```
 
 ### Apply to an existing site
 ```bash
 cd myportfolio
 git submodule add https://github.com/Yukuro/hugo-theme-shell.git themes/hugo-theme-shell
-hugo server -t hugo-theme-shell -w
+hugo server -t hugo-theme-shell -w -D
 ```
 
 ## Configuration
