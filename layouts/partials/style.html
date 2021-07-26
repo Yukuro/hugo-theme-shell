@@ -1,0 +1,21 @@
+<style>
+{{ if .IsHome }}
+{{- $default_style := resources.Get "sass/default.scss" | resources.ToCSS | minify -}}
+{{- $default_style.Content | safeCSS -}}
+{{ else }}
+{{- $activity_style := resources.Get "sass/activity.scss" | resources.ToCSS | minify -}}
+{{- $activity_style.Content | safeCSS -}}
+{{ end }}
+
+{{ $terminal_style := resources.Get "sass/white.scss" }}
+{{ with (eq .Site.Params.Terminal.schema "monokai") }} {{- $terminal_style = resources.Get "sass/monokai.scss" | resources.ToCSS | minify -}} {{ end }}
+{{ with (eq .Site.Params.Terminal.schema "powershell") }} {{- $terminal_style = resources.Get "sass/powershell.scss" | resources.ToCSS | minify -}} {{ end }}
+{{ with (eq .Site.Params.Terminal.schema "gruvbox_light") }} {{- $terminal_style = resources.Get "sass/gruvbox_light.scss" | resources.ToCSS | minify -}} {{ end }}
+{{ with (eq .Site.Params.Terminal.schema "gruvbox_dark") }} {{- $terminal_style = resources.Get "sass/gruvbox_dark.scss" | resources.ToCSS | minify -}} {{ end }}
+{{ with (eq .Site.Params.Terminal.schema "solarized_light") }} {{- $terminal_style = resources.Get "sass/solarized_light.scss" | resources.ToCSS | minify -}} {{ end }}
+{{ with (eq .Site.Params.Terminal.schema "solarized_dark") }} {{- $terminal_style = resources.Get "sass/solarized_dark.scss" | resources.ToCSS | minify -}} {{ end }}
+{{ with (eq .Site.Params.Terminal.schema "ubuntu") }} {{- $terminal_style = resources.Get "sass/ubuntu.scss" | resources.ToCSS | minify -}} {{ end }}
+{{ with (eq .Site.Params.Terminal.schema "retro") }} {{- $terminal_style = resources.Get "sass/retro.scss" | resources.ToCSS | minify -}} {{ end }}
+
+{{- $terminal_style.Content | safeCSS -}}
+</style>

@@ -27,10 +27,6 @@
 
     {{ $end := $env }}
 
-    {{ $sass := resources.Get "sass/default.scss" }}
-    {{ $style := $sass | resources.ToCSS }}
-    <link rel="stylesheet" href="{{ $style.Permalink }}">
-
     {{ $payload := delimit (slice $cd $cat $description $tree $leaf $end) "" }}
     {{ $delay := $.Site.Params.Terminal.terminalDelay}}
     {{ partial "partials/typewriter.html" (dict "context" . "payload" $payload "delay" $delay )}}
