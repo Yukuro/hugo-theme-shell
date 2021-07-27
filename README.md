@@ -53,6 +53,8 @@ hugo server -t hugo-theme-shell -w -D
 in config.toml
 ```toml
 [Params]
+  # Note: This is for the meta description, which is different from the "description" displayed in the terminal.
+  description = "Jane Doe's Portfolio!"
   [Params.Terminal]
   # Note: color schema
   # Note: You can choose between
@@ -86,6 +88,11 @@ in config.toml
   Nice to meet you!
 
   """
+
+  # Note: If you want to use a Markdown file, you can use the following
+  # description = "/description.md"
+  # Note: and put the description.md in /content/description.md
+
   [Params.Tree]
   use = true
   folderName = "my_activity"
