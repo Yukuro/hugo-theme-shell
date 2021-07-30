@@ -20,7 +20,7 @@ ignoreErrors = ["error-remote-getjson"]
   #
   # [description]
   #
-  # Note: if you set Params.Tree > user = true
+  # Note: if you set Params.Tree > use = true
   # [userName]@[pcName]:~/[workDir]$ tree ./[folderName]/
   # ./[folderName]/
   # ...
@@ -31,9 +31,11 @@ ignoreErrors = ["error-remote-getjson"]
   profile = "profile.txt"
 
   # Note: speed at which text is displayed on the terminal
+  # Note: if set to 0, typing animation will be disabled
   terminalDelay = 20
 
   # Note: speed at which text is displayed on the activity pages
+  # Note: if set to 0, typing animation will be disabled
   activityDelay = 5
 
   description = """

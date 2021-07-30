@@ -1,9 +1,13 @@
 <div id=typewriter></div>
 
-<script type="text/javascript">
-    const instance = new Typewriter('#typewriter', {
-        strings: '{{ .payload }}',
-        delay: '{{ .delay }}',
-        autoStart: true,
-    });
-</script>
+{{- if eq .delay 0 }}
+    {{ .payload }}
+{{ else }}
+    <script type="text/javascript">
+        const instance = new Typewriter('#typewriter', {
+            strings: '{{ .payload }}',
+            delay: '{{ .delay }}',
+            autoStart: true,
+        });
+    </script>
+{{ end -}}

@@ -50,7 +50,7 @@ hugo server -t hugo-theme-shell -w -D
 ```
 
 ## Configuration
-in config.toml
+in [config.toml](config/_default/config.toml)
 ```toml
 [Params]
   # Note: This is for the meta description, which is different from the "description" displayed in the terminal.
@@ -67,7 +67,7 @@ in config.toml
   #
   # [description]
   #
-  # Note: if you set Params.Tree > user = true
+  # Note: if you set Params.Tree > use = true
   # [userName]@[pcName]:~/[workDir]$ tree ./[folderName]/
   # ./[folderName]/
   # ...
@@ -78,9 +78,11 @@ in config.toml
   profile = "profile.txt"
 
   # Note: speed at which text is displayed on the terminal
+  # Note: if set to 0, typing animation will be disabled
   terminalDelay = 20
 
   # Note: speed at which text is displayed on the activity pages
+  # Note: if set to 0, typing animation will be disabled
   activityDelay = 5
 
   description = """
