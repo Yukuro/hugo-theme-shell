@@ -1,7 +1,7 @@
 # Hugo Theme: Shell
 Terminal-like theme with selectable color schemes.
 
-![Screenshot](https://github.com/Yukuro/hugo-theme-shell/blob/master/images/motion.gif?raw=true)
+![Screenshot](https://raw.githubusercontent.com/Yukuro/hugo-theme-shell/master/images/motion.gif)
 
 ## Demo site
 - https://hugo-theme-shell.netlify.app/
@@ -10,21 +10,29 @@ Terminal-like theme with selectable color schemes.
 - Terminal-like portfolio
     - Selectable color schemes
         - `monokai`
-        ![monokai](https://github.com/Yukuro/hugo-theme-shell/blob/master/images/monokai.png?raw=true)
+        ![monokai](https://raw.githubusercontent.com/Yukuro/hugo-theme-shell/master/images/monokai.png)
+
         - `powershell`
-        ![powershell](https://github.com/Yukuro/hugo-theme-shell/blob/master/images/powershell.png?raw=true)
+        ![powershell](https://raw.githubusercontent.com/Yukuro/hugo-theme-shell/master/images/powershell.png)
+
         - `gruvbox_light`
-        ![gruvbox_light](https://github.com/Yukuro/hugo-theme-shell/blob/master/images/gruvbox_light.png?raw=true)
+        ![gruvbox_light](https://raw.githubusercontent.com/Yukuro/hugo-theme-shell/master/images/gruvbox_light.png)
+
         - `gruvbox_dark`
-        ![gruvbox_dark](https://github.com/Yukuro/hugo-theme-shell/blob/master/images/gruvbox_dark.png?raw=true)
+        ![gruvbox_dark](https://raw.githubusercontent.com/Yukuro/hugo-theme-shell/master/images/gruvbox_dark.png)
+
         - `solarized_light`
-        ![solarized_light](https://github.com/Yukuro/hugo-theme-shell/blob/master/images/solarized_light.png?raw=true)
+        ![solarized_light](https://raw.githubusercontent.com/Yukuro/hugo-theme-shell/master/images/solarized_light.png)
+
         - `solarized_dark`
-        ![solarized_dark](https://github.com/Yukuro/hugo-theme-shell/blob/master/images/solarized_dark.png?raw=true)
+        ![solarized_dark](https://raw.githubusercontent.com/Yukuro/hugo-theme-shell/master/images/solarized_dark.png)
+
         - `ubuntu`
-        ![ubuntu](https://github.com/Yukuro/hugo-theme-shell/blob/master/images/ubuntu.png?raw=true)
+        ![ubuntu](https://raw.githubusercontent.com/Yukuro/hugo-theme-shell/master/images/ubuntu.png)
+
         - `retro`
-        ![retro](https://github.com/Yukuro/hugo-theme-shell/blob/master/images/retro.png?raw=true)
+        ![retro](https://raw.githubusercontent.com/Yukuro/hugo-theme-shell/master/images/retro.png)
+        
 - Minimal design
 - Responsive
 
