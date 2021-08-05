@@ -3,6 +3,7 @@
 {{- if eq .delay 0 }}
     {{ .payload }}
 {{ else }}
+    <script src="https://cdn.jsdelivr.net/gh/tameemsafi/typewriterjs/dist/core.js"></script>
     <script type="text/javascript">
         const instance = new Typewriter('#typewriter', {
             strings: '{{ .payload }}',

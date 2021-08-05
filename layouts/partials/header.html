@@ -1,0 +1,5 @@
+{{ if or ( eq .Site.Params.Terminal.terminalDelay 0 ) ( eq .Site.Params.Terminal.activityDelay 0 )}}
+    {{ if .Page.Params.math }}
+        {{ partial "mathjax.html" . }}
+    {{ end }}
+{{ end }}

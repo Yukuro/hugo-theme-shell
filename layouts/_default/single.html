@@ -3,6 +3,6 @@
     {{ $content := .Content }}
 
     {{ $payload := delimit (slice "<span id=terminal>" $title $content "</span>") "" }}
-    {{ $delay := $.Site.Params.Terminal.activityDelay}}
+    {{ $delay := $.Site.Params.Terminal.activityDelay }}
     {{ partial "partials/typewriter.html" (dict "context" . "payload" $payload "delay" $delay )}}
 {{ end }}

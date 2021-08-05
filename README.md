@@ -35,6 +35,7 @@ Terminal-like theme with selectable color schemes.
         
 - Minimal design
 - Responsive
+- [MathJax](https://www.mathjax.org/): Beautiful and accessible math in all browsers
 
 ## Requirements
 - Hugo Version 0.85.0 or higher
@@ -87,10 +88,16 @@ in [config.toml](config/_default/config.toml)
 
   # Note: speed at which text is displayed on the terminal
   # Note: if set to 0, typing animation will be disabled
+  # Note:
+  # Note: If you want to enable Mathjax, you need to set it to 0
+  # Note: and set "math: true" at front matter in your Markdown file
   terminalDelay = 20
 
   # Note: speed at which text is displayed on the activity pages
   # Note: if set to 0, typing animation will be disabled
+  # Note: 
+  # Note: If you want to enable Mathjax, you need to set it to 0
+  # Note: and set "math: true" at front matter in your Markdown file
   activityDelay = 5
 
   description = """
