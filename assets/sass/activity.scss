@@ -1,18 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
+@import "default.scss";
+
+body {
+    // I prefer only the left and right margins for the post.
+    align-items: unset;
+
+    overflow-y: scroll;
+}
 
 #content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 800px;
-    height: 600px;
-    min-width: 250px;
-    max-width: 800px;
-    margin-left: -400px;
-    margin-top: -300px;
-
-    font-family: 'Inconsolata', monospace;
-    font-size: 24px;
-    line-height: 28px;
-    font-weight: normal;
+    max-width: 80vmin;
 }

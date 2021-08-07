@@ -1,23 +1,48 @@
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata&display=swap");
 
-body {
-    height: 400px;
-    position: relative;
-    
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
 
     font-family: "Inconsolata", monospace;
-    font-size: 24px;
-    line-height: 28px;
+    font-size: 4vmin;
+    line-height: 4.1vmin;
     font-weight: normal;
 }
 
-#content {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    margin: auto;
-    width: 600px;
-    height: 200px;
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+#content {
+    min-width: 82vmin;
+    min-height: 82vmin;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  box-shadow: inset 0 0 1px white;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow:0 0 0 1px white;
+}
+
+@media only screen and (min-width: 768px){
+    body {
+        font-size: 2.5vmin;
+        line-height: 2.6vmin;
+    }
+
+    #content {
+        min-width: 60vmin;
+    }
+}
+
