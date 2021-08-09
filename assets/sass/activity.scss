@@ -10,3 +10,8 @@ body {
 #content {
     max-width: 80vmin;
 }
+
+pre {
+    overflow-x: scroll;
+    white-space: pre;
+}
