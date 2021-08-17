@@ -123,5 +123,14 @@ in [config.toml](config/_default/config.toml)
   ]
 ```
 
+## trouble shooting
+- Hugo build fails
+  - What is the version of your Hugo?
+  - Shell theme requires Hugo version 0.85.0 or higher and **extended version**
+- Post does not show up (return 404 not found)
+  - There are two possible causes for this.
+    1. Forgot to add -D (--buildDrafts) as an argument to the hugo command
+    2. The front matter of the post's .md file has "draft: true" set.
+
 ## Contributing
 Contributions are always welcome!
