@@ -16,6 +16,7 @@
 {{ with (eq .Site.Params.Terminal.schema "solarized_dark") }} {{- $terminal_style = resources.Get "sass/solarized_dark.scss" | resources.ToCSS | minify -}} {{ end }}
 {{ with (eq .Site.Params.Terminal.schema "ubuntu") }} {{- $terminal_style = resources.Get "sass/ubuntu.scss" | resources.ToCSS | minify -}} {{ end }}
 {{ with (eq .Site.Params.Terminal.schema "retro") }} {{- $terminal_style = resources.Get "sass/retro.scss" | resources.ToCSS | minify -}} {{ end }}
+{{ with (eq .Site.Params.Terminal.schema "goph") }} {{- $terminal_style = resources.Get "sass/goph.scss" | resources.ToCSS | minify -}} {{ end }}
 
 {{- $terminal_style.Content | safeCSS -}}
 </style>

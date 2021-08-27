@@ -58,6 +58,20 @@ git submodule add https://github.com/Yukuro/hugo-theme-shell.git themes/hugo-the
 hugo server -t hugo-theme-shell -w -D
 ```
 
+### How to use Goph theme
+hugo-theme-shell supports the [Goph](https://github.com/Mayccoll/Gogh) theme by using [goph-to-stylesheet](https://github.com/Yukuro/goph-to-stylesheet)
+1. Choose a Goph theme : you can choose a theme [here](https://mayccoll.github.io/Gogh/).
+2. Use goph-to-stylesheet to convert to scss file
+```bash
+goph-to-stylesheet -t THEME_YOU_CHOSE -i template/shell.scss -o goph.scss
+```
+3. Copy goph.scss to `assets/sass/goph.scss`
+4. Configure your config.toml as follows
+```toml
+[Params.Terminal]
+schema = "goph"
+```
+
 ## Configuration
 in [config.toml](config/_default/config.toml)
 ```toml
@@ -68,6 +82,7 @@ in [config.toml](config/_default/config.toml)
   # Note: color schema
   # Note: You can choose between
   # Note: ["monokai", "powershell", "gruvbox_light", "gruvbox_dark", "solarized_light", "solarized_dark", "ubuntu", "retro"]
+  # Note: If you want to use the Goph theme, set it to "goph" (See README.md)
   schema = "monokai"
 
   # Note: in terminal
