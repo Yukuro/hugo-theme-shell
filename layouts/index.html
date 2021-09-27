@@ -1,8 +1,9 @@
 {{ define "main" }}
-    {{ $env := printf "<strong><span id=user>%s@%s</span><span id=terminal>:</span><span id=dir>~/%s</span></strong><span id=terminal>$</span>" .Site.Params.Terminal.userName .Site.Params.Terminal.pcName "" | safeHTML }}
-    {{ $cd := printf "%s <span id=terminal>cd %s</span><br>" $env .Site.Params.Terminal.workDir | safeHTML }}
-    {{ $env := printf "<strong><span id=user>%s@%s</span><span id=terminal>:</span><span id=dir>~/%s</span></strong><span id=terminal>$</span>" .Site.Params.Terminal.userName .Site.Params.Terminal.pcName .Site.Params.Terminal.workDir | safeHTML }}
-    {{ $cat := printf "%s <span id=terminal>cat %s</span><br>" $env .Site.Params.Terminal.profile | safeHTML }}
+    {{ $env := printf "<strong><span id='user'>%s@%s</span><span id='terminal'>:</span><span id='dir'>~/%s</span></strong><span id='terminal'>$</span>" .Site.Params.Terminal.userName .Site.Params.Terminal.pcName "" | safeHTML }}
+    {{ $envWithDir := printf "<strong><span id='user'>%s@%s</span><span id='terminal'>:</span><span id='dir'>~/%s</span></strong><span id='terminal'>$</span>" .Site.Params.Terminal.userName .Site.Params.Terminal.pcName .Site.Params.Terminal.workDir | safeHTML }}
+
+    {{ $cd := printf "<span id='terminal'><span class='type'>cd %s</span></span>" .Site.Params.Terminal.workDir | safeHTML }}
+    {{ $cat := printf "<span id=terminal><span class='type'>cat %s</span></span>" .Site.Params.Terminal.profile | safeHTML }}
 
     {{ $description := "" }}
     {{ if eq (substr .Site.Params.Terminal.description -3 3) ".md" }}
@@ -11,16 +12,17 @@
             <!-- replace the first  p tag with a br tag  -->
             {{ $s = replaceRE "</?p[^>]*>" "" .Content 1 }}
         {{ end }}
-    {{ $description = printf "<span id=terminal>%s</span>" $s | safeHTML}}
+    {{ $description = printf "<span id='terminal'>%s</span>" $s | safeHTML}}
     {{ else }}
-    {{ $description = printf "<span id=terminal>%s</span>" .Site.Params.Terminal.description | replaceRE "\n" "<br>" | safeHTML}}
+    {{ $limit := sub (len (findRE "\n" .Site.Params.Terminal.description)) 1 }}
+    {{ $description = printf "<span id='terminal'>%s</span>" .Site.Params.Terminal.description | replaceRE "\n" "<br>" | safeHTML}}
     {{ end }}
 
     {{ $tree := "" }}
     {{ $leaf := "" }}
     {{ if .Site.Params.Tree.use }}
-    {{ $tree = printf "%s <span id=terminal>tree ./%s/</span><br>" $env .Site.Params.Tree.folderName}}
-    {{ $leaf = printf "%s<strong><span id=dir>./%s/</span></strong><br>" $leaf .Site.Params.Tree.folderName }}
+    {{ $tree = printf "<span id='terminal'><span class='type'>tree ./%s/</span></span>" .Site.Params.Tree.folderName | safeHTML}}
+    {{ $leaf = printf "%s<strong><span id='dir'>./%s/</span></strong><br>" $leaf .Site.Params.Tree.folderName | safeHTML}}
         {{ range $index, $val := .Site.Params.Tree.files }}
             {{ $ac := index $val 0}}
             {{ $link := index $val 1}}
@@ -29,9 +31,9 @@
                 {{ $link = $l.Permalink }}
             {{ end }}
             {{ if eq (add $index 1) (len $.Site.Params.Tree.files) }}
-            {{ $leaf = printf "<span id=terminal>%s└── <a href='%s'>%s</a></span><br>" $leaf $link $ac}}
+            {{ $leaf = printf "<span id='terminal'>%s└── <a href='%s'>%s</a></span>" $leaf $link $ac | safeHTML}}
             {{ else }}
-            {{ $leaf = printf "<span id=terminal>%s├── <a href='%s'>%s</a></span><br>" $leaf $link $ac}}
+            {{ $leaf = printf "<span id='terminal'>%s├── <a href='%s'>%s</a></span><br>" $leaf $link $ac | safeHTML}}
             {{ end }}
         {{ end }}
     {{ end }}
@@ -39,7 +41,11 @@
     {{ $end := $env }}
 
     {{ $payload := delimit (slice $cd $cat $description $tree $leaf $end) "" }}
-    {{ $delay := $.Site.Params.Terminal.terminalDelay}}
-    {{ partial "partials/typewriter.html" (dict "context" . "payload" $payload "delay" $delay )}}
+
+    {{ $ps1Delay := $.Site.Params.Terminal.ps1Delay }}
+    {{ $stdoutDelay :=  $.Site.Params.Terminal.stdoutDelay }}
+    {{ $commandDelay := $.Site.Params.Terminal.commandDelay }}
+
+    {{ partial "partials/typeIndex.html" (dict "context" . "env" $env "cd" $cd "envWithDir" $envWithDir "cat" $cat "description" $description "tree" $tree "leaf" $leaf "ps1delay" $ps1Delay "stdoutdelay" $stdoutDelay "commanddelay" $commandDelay ) }}
 
 {{ end }}

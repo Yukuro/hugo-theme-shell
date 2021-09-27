@@ -1,8 +1,8 @@
 {{ define "main" }}
     {{ $title := printf "<h1 id='title'>%s</h1>" .Title}}
-    {{ $content := .Content }}
+    {{ $title := printf "<span id='terminal'>%s</span>" $title}}
+    {{ $content := printf "<span id='terminal'>%s</span>" .Content }}
 
-    {{ $payload := delimit (slice "<span id=terminal>" $title $content "</span>") "" }}
-    {{ $delay := $.Site.Params.Terminal.activityDelay }}
-    {{ partial "partials/typewriter.html" (dict "context" . "payload" $payload "delay" $delay )}}
+
+    {{ partial "partials/typeActivity.html" (dict "context" . "title" $title "content" $content "titledelay" $.Site.Params.Terminal.titleDelay "contentdelay" $.Site.Params.Terminal.contentDelay )}}
 {{ end }}
