@@ -38,7 +38,7 @@ ignoreErrors = ["error-remote-getjson"]
   # Note: and set "math: true" at front matter in your Markdown file
   ps1Delay = 0 # prompt speed : [userName]@[pcName]:~/$ , [userName]@[pcName]:~/[workDir]$
   stdoutDelay = 0 # stdout speed : [description] , files in Params.Tree
-  commandDelay = 40 # command speed : cd [workDir] , cat [profile] , tree ./[folderName]/
+  commandDelay = 50 # command speed : cd [workDir] , cat [profile] , tree ./[folderName]/
 
   # terminalDelay = 20 : deprecated
 
