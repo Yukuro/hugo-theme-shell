@@ -2,8 +2,8 @@
     {{ $env := printf "<strong><span id='user'>%s@%s</span><span id='terminal'>:</span><span id='dir'>~/%s</span></strong><span id='terminal'>$</span>" .Site.Params.Terminal.userName .Site.Params.Terminal.pcName "" | safeHTML }}
     {{ $envWithDir := printf "<strong><span id='user'>%s@%s</span><span id='terminal'>:</span><span id='dir'>~/%s</span></strong><span id='terminal'>$</span>" .Site.Params.Terminal.userName .Site.Params.Terminal.pcName .Site.Params.Terminal.workDir | safeHTML }}
 
-    {{ $cd := printf "<span id='terminal'><span class='type'>cd %s</span></span>" .Site.Params.Terminal.workDir | safeHTML }}
-    {{ $cat := printf "<span id=terminal><span class='type'>cat %s</span></span>" .Site.Params.Terminal.profile | safeHTML }}
+    {{ $cd := printf "<span id='terminal'>cd %s</span>" .Site.Params.Terminal.workDir | safeHTML }}
+    {{ $cat := printf "<span id=terminal>cat %s</span>" .Site.Params.Terminal.profile | safeHTML }}
 
     {{ $description := "" }}
     {{ if eq (substr .Site.Params.Terminal.description -3 3) ".md" }}
@@ -15,13 +15,14 @@
     {{ $description = printf "<span id='terminal'>%s</span>" $s | safeHTML}}
     {{ else }}
     {{ $limit := sub (len (findRE "\n" .Site.Params.Terminal.description)) 1 }}
-    {{ $description = printf "<span id='terminal'>%s</span>" .Site.Params.Terminal.description | replaceRE "\n" "<br>" | safeHTML}}
+    {{ $description = printf "<span id='terminal'>%s</span>" .Site.Params.Terminal.description }}
+    {{ $description = replaceRE "\n" "<br>" $description $limit| safeHTML }}
     {{ end }}
 
     {{ $tree := "" }}
     {{ $leaf := "" }}
     {{ if .Site.Params.Tree.use }}
-    {{ $tree = printf "<span id='terminal'><span class='type'>tree ./%s/</span></span>" .Site.Params.Tree.folderName | safeHTML}}
+    {{ $tree = printf "<span id='terminal'>tree ./%s/</span>" .Site.Params.Tree.folderName | safeHTML}}
     {{ $leaf = printf "%s<strong><span id='dir'>./%s/</span></strong><br>" $leaf .Site.Params.Tree.folderName | safeHTML}}
         {{ range $index, $val := .Site.Params.Tree.files }}
             {{ $ac := index $val 0}}
