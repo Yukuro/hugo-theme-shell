@@ -1,7 +1,7 @@
 # Hugo Theme: Shell
 Terminal-like theme with selectable color schemes.
 
-![Screenshot](https://raw.githubusercontent.com/Yukuro/hugo-theme-shell/master/images/motion.gif)
+![Screenshot](https://raw.githubusercontent.com/Yukuro/hugo-theme-shell/master/images/motion2.gif)
 
 ## Demo site
 - https://hugo-theme-shell.netlify.app/
