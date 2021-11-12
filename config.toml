@@ -1,5 +1,5 @@
-baseURL = "https://www.example.com/"
-title = "Shell"
+baseURL = "https://www.kristenandonie.com/"
+title = "Kristen"
 # author = "Yukuro"
 # prevent build failures when using Hugo's Instagram shortcode due to deprecated Instagram API.
 # See https://github.com/gohugoio/hugo/issues/7228#issuecomment-714490456
@@ -7,7 +7,7 @@ ignoreErrors = ["error-remote-getjson"]
 
 [Params]
   # Note: This is for the meta description, which is different from the "description" displayed in the terminal.
-  description = "Jane Doe's Portfolio!"
+  description = "Kristen Andonie's Portfolio"
   [Params.Terminal]
   # Note: color schema
   # Note: You can choose between
@@ -26,10 +26,10 @@ ignoreErrors = ["error-remote-getjson"]
   # ./[folderName]/
   # ...
   # Note: result of the tree command
-  userName = "jane"
+  userName = "kristen"
   pcName = "laptop"
-  workDir = "mydir"
-  profile = "profile.txt"
+  workDir = "whoami"
+  profile = "about.txt"
 
   # Note: speed at which text is displayed on the terminal
   # Note: if set to 0, typing animation will be disabled
@@ -53,8 +53,8 @@ ignoreErrors = ["error-remote-getjson"]
   # activityDelay = 5 : deprecated
 
   description = """
-  Hi I am Jane Doe!
-  Nice to meet you!
+  Hi I am Kristen Andonie!
+  I am blah blah blah
   
   """
 
@@ -64,14 +64,14 @@ ignoreErrors = ["error-remote-getjson"]
 
   [Params.Tree]
   use = true
-  folderName = "my_activity"
+  folderName = "stuff i've done weee"
   # Note: ["ACTIVITY", "URL or PATH TO YOUR MARKDOWN FILE"]
   files = [ 
     ["C/C++", "https://www.example.com/"],
     ["Python", "https://www.example.com/"],
     ["Go", "https://golang.org/"],
-    ["Hugo", "/post/some-activity.md"],
-    ["Docker", "/post/some-activity.md"],
+    ["Hugo", "/posts/somefile.md"],
+    ["LinkedIn", "https://www.linkedin.com/in/kandonie/"],
   ]
 
 [module]
