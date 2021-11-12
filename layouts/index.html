@@ -35,9 +35,9 @@
             {{ end }}
             
             {{ if eq (add $index 1) (len $.Site.Params.Tree.files) }}
-            {{ $leaf = printf "<span id='terminal'>%s`-- <a href='%s'>%s</a></span>" $leaf $link $ac | safeHTML}}
+            {{ $leaf = printf "<span id='terminal'>%s&#9492;&#9472; <a href='%s'>%s</a></span>" $leaf $link $ac | safeHTML}}
             {{ else }}
-            {{ $leaf = printf "<span id='terminal'>%s|-- <a href='%s'>%s</a></span><br>" $leaf $link $ac | safeHTML}}
+            {{ $leaf = printf "<span id='terminal'>%s&#9500;&#9472; <a href='%s'>%s</a></span><br>" $leaf $link $ac | safeHTML}}
             {{ end }}
         {{ end }}
     {{ end }}
