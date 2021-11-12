@@ -78,3 +78,23 @@ ignoreErrors = ["error-remote-getjson"]
   [module.hugoVersion]
     extended = true
     min = "0.85.0"
+
+# Deployment
+[deployment]
+
+[[deployment.targets]]
+URL = "s3://www.kristenandonie.com?region=us-east-1"
+name = "kristenandonie.com"
+
+# If you are using a CloudFront CDN, deploy will invalidate the cache as needed.
+cloudFrontDistributionID = "E26A2Z0QPKLQQL"
+
+[[deployment.matchers]]
+# Cache static assets for 20 years.
+cacheControl = "max-age=630720000, no-transform, public"
+gzip = true
+pattern = "^.+\\.(js|css|png|jpg|gif|svg|ttf)$"
+
+[[deployment.matchers]]
+gzip = true
+pattern = "^.+\\.(html|xml|json)$"
