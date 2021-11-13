@@ -27,6 +27,7 @@ body {
 #content {
     min-width: 82vmin;
     min-height: 82vmin;
+    text-align: center;
 }
 
 ::-webkit-scrollbar {
@@ -71,6 +72,40 @@ body {
     }
 
     #content {
-        min-width: 60vmin;
+        min-width: 120vmin;
     }
+
+    figure.floatright > img {
+        width: 50%;
+        height: auto;
+        float: right;
+    }
+
+    figure.floatleft > img {
+        width: 50%;
+        height: auto;
+        float: left;
+    }
+
+    figure.floatright {
+        display: flex;
+    }
+
+    figure.floatright figcaption {
+        margin: auto 10px;
+    }
+
+    figure.floatleft {
+        display: flex;
+    }
+
+    figure.floatleft figcaption {
+        margin: auto 10px;
+    }
+
+}
+
+figure > img {
+    max-width: 100%;
+    max-height: auto;
 }

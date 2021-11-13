@@ -1,5 +1,5 @@
 baseURL = "https://www.kristenandonie.com/"
-title = "Kristen"
+title = "Kristen Andonie"
 # author = "Yukuro"
 # prevent build failures when using Hugo's Instagram shortcode due to deprecated Instagram API.
 # See https://github.com/gohugoio/hugo/issues/7228#issuecomment-714490456
@@ -27,8 +27,8 @@ ignoreErrors = ["error-remote-getjson"]
   # ...
   # Note: result of the tree command
   userName = "kristen"
-  pcName = "laptop"
-  workDir = "whoami"
+  pcName = "thinkpad"
+  workDir = "portfolio"
   profile = "about.txt"
 
   # Note: speed at which text is displayed on the terminal
@@ -53,8 +53,14 @@ ignoreErrors = ["error-remote-getjson"]
   # activityDelay = 5 : deprecated
 
   description = """
-  Hi I am Kristen Andonie!
-  I am blah blah blah
+Hi I'm Kristen!
+ 
+I like working on multidisciplinary projects,
+with a focus on software-hardware integration.
+
+I'll bring a diverse skillset to your team,
+and I want to spend my life learning as much
+as I can about everything.
   
   """
 
@@ -64,13 +70,15 @@ ignoreErrors = ["error-remote-getjson"]
 
   [Params.Tree]
   use = true
-  folderName = "stuff i've done weee"
+  folderName = "stuffs"
   # Note: ["ACTIVITY", "URL or PATH TO YOUR MARKDOWN FILE"]
   files = [ 
-    ["C/C++", "https://www.example.com/"],
-    ["Python", "https://www.example.com/"],
-    ["Go", "https://golang.org/"],
-    ["Hugo", "/posts/somefile.md"],
+    ["Projects", "https://www.example.com/"],
+    ["Education", "/posts/education.md"],
+    ["Work_Experience", "https://golang.org/"],
+    ["Community_Activities", "/posts/somefile.md"],
+    ["What_People_Say_About_Me", "/posts/reviews.md"],
+    ["What_I_Do_In_My_Freetime", "/posts/freetime.md"],
     ["LinkedIn", "https://www.linkedin.com/in/kandonie/"],
   ]
 
@@ -78,6 +86,10 @@ ignoreErrors = ["error-remote-getjson"]
   [module.hugoVersion]
     extended = true
     min = "0.85.0"
+
+#Allow Unsafe building
+[markup.goldmark.renderer]
+unsafe= true
 
 # Deployment
 [deployment]
