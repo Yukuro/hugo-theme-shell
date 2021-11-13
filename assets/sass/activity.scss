@@ -14,6 +14,7 @@ body {
 #content {
     max-width: 82vmin;
     justify-content: left;
+    text-align: center;
 }
 
 pre {
@@ -34,4 +35,16 @@ pre {
     100% {
         opacity: 1;
     }
+}
+
+@media only screen and (min-width: 768px) {
+    body {
+        font-size: 2.5vmin;
+        line-height: 2.6vmin;
+    }
+
+    #content {
+        min-width: 120vmin;
+    }
+
 }

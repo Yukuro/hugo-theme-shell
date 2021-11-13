@@ -27,7 +27,6 @@ body {
 #content {
     min-width: 82vmin;
     min-height: 82vmin;
-    text-align: center;
 }
 
 ::-webkit-scrollbar {
@@ -72,7 +71,7 @@ body {
     }
 
     #content {
-        min-width: 120vmin;
+        min-width: 60vmin;
     }
 
     figure.floatright > img {

@@ -52,4 +52,24 @@ body {
     font-size: 2.5vmin;
     line-height: 2.6vmin; }
   #content {
-    min-width: 60vmin; } }
+    min-width: 60vmin; }
+  figure.floatright > img {
+    width: 50%;
+    height: auto;
+    float: right; }
+  figure.floatleft > img {
+    width: 50%;
+    height: auto;
+    float: left; }
+  figure.floatright {
+    display: flex; }
+  figure.floatright figcaption {
+    margin: auto 10px; }
+  figure.floatleft {
+    display: flex; }
+  figure.floatleft figcaption {
+    margin: auto 10px; } }
+
+figure > img {
+  max-width: 100%;
+  max-height: auto; }
