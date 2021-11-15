@@ -1,11 +1,11 @@
 # Customize the terminal as you like
 
 ## Note
-This document explains how to customize the terminal, but it is a temporary solution.
+This document explains how to customize the terminal, but it is a temporary solution.\
 It is subject to change in future updates.
 
 ## 0. Directory structure
-The Hugo configuration to be customized looks like this.
+The Hugo configuration to be customized looks like this.\
 This is the file structure of the hugo-theme-shell [READMD.md](https://github.com/Yukuro/hugo-theme-shell/blob/master/README.md#installation) with all the steps completed.
 ```bash
 $hugo new site mysite
@@ -49,8 +49,8 @@ From here, we will edit the copied file, but the task will vary depending on wha
 ## 2-A Change only the order of the commands
 Here we want to add `[userName]@[pcName]:~/[workDir]$ cat [profile]` between the last line of the teminal and the line before it.
 
-In `typeIndex.html`
-The collection of `span` tags at the beginning is the root of the order of the commands.
+In `typeIndex.html`\
+The collection of `span` tags at the beginning is the root of the order of the commands.\
 Thus, if you want to add it between the last line and the line before it, add `<span id="ps1_05"></span> <span id="cat2"></span> <br>` at that position.
 ```html
     <span id="ps1_01"></span> <span id="cd"></span> <br>
@@ -63,7 +63,7 @@ Thus, if you want to add it between the last line and the line before it, add `<
 ```
 The id of the `span` tag must be unique.
 
-The javascript in the second half of `typeIndex.html` uses `async/await` to control the typing effect.
+The javascript in the second half of `typeIndex.html` uses `async/await` to control the typing effect.\
 In particular, `typeeffect` is associated with the edited `span` tag, so you need to insert the code in the correct order.
 ```javascript
 const typeeffetct = async () => {
@@ -83,8 +83,8 @@ If you want to change the contents of the command, you need to edit `config.toml
 
 In this example, after adding `[userName]@[pcName]:~/[workDir]$ cat [profile2]` to the last line of the terminal, we want to display the contents of `[profile2]` (`[description2]`)
 
-In `config.toml`
-In `config.toml`, under `[Params.Terminal]`, set the content you want to display and the name of the property that defines it.
+In `config.toml`\
+In `config.toml`, under `[Params.Terminal]`, set the content you want to display and the name of the property that defines it.\
 In this example, we will set `profile2` and `description2`.
 ```toml
     pcName = "PC"
@@ -107,8 +107,8 @@ In this example, we will set `profile2` and `description2`.
 +++   """
 ```
 
-In `index.html`
-Takes the property name and its contents from `config.toml` and passes it to `typeIndex.html`.
+In `index.html`\
+Takes the property name and its contents from `config.toml` and passes it to `typeIndex.html`.\
 Here, we create the variables `cat2` and `description2` and pass them to typeIndex.html through `partial`.
 ```html
       {{ $stdoutDelay :=  $.Site.Params.Terminal.stdoutDelay }}
@@ -119,8 +119,8 @@ Here, we create the variables `cat2` and `description2` and pass them to typeInd
 +++   {{ partial "partials/typeIndex.html" (dict "context" . "env" $env "cd" $cd "envWithDir" $envWithDir "cat" $cat "description" $description "tree" $tree "leaf" $leaf "ps1delay" $ps1Delay "stdoutdelay" $stdoutDelay "commanddelay" $commandDelay "cat2" $cat2 "description2" $description2) }}
 ```
 
-In `typeIndex.html`
-Basically, what you need to do is the same as in step 2-A.
+In `typeIndex.html`\
+Basically, what you need to do is the same as in step 2-A.\
 Edit the HTML part that controls the display order and the javascript that controls the typing animation.
 ```html
     <span id="ps1_01"></span> <span id="cd"></span> <br>
