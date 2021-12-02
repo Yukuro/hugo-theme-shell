@@ -69,7 +69,7 @@ goph-to-stylesheet -t THEME_YOU_CHOSE -i template/shell.scss -o goph.scss
 4. Configure your config.toml as follows
 ```toml
 [Params.Terminal]
-schema = "goph"
+scheme = "goph"
 ```
 
 ## Configuration
@@ -79,11 +79,11 @@ in [config.toml](config/_default/config.toml)
   # Note: This is for the meta description, which is different from the "description" displayed in the terminal.
   description = "Jane Doe's Portfolio!"
   [Params.Terminal]
-  # Note: color schema
+  # Note: color scheme
   # Note: You can choose between
   # Note: ["monokai", "powershell", "gruvbox_light", "gruvbox_dark", "solarized_light", "solarized_dark", "ubuntu", "retro"]
   # Note: If you want to use the Goph theme, set it to "goph" (See README.md)
-  schema = "monokai"
+  scheme = "monokai"
 
   # Note: in terminal
   # [userName]@[pcName]:~/$ cd [workDir]
