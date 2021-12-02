@@ -9,16 +9,19 @@
 
 {{ $terminal_style := resources.Get "sass/white.scss" }}
 {{/*  {{ with (eq .Site.Params.Terminal.schema "monokai") }} {{- $terminal_style = resources.Get "sass/monokai.scss" | resources.ToCSS | minify -}} {{ end }}  */}}
-{{/*  {{ with (eq .Site.Params.Terminal.schema "powershell") }} {{- $terminal_style = resources.Get "sass/powershell.scss" | resources.ToCSS | minify -}} {{ end }}  */}}
+{{ with (eq .Site.Params.Terminal.schema "shell-powershell") }}
+    {{- $terminal_style = resources.Get "sass/powershell.scss" | resources.ToCSS | minify -}}
+    {{- $terminal_style = $terminal_style.Content -}}
+{{ end }}
 {{/*  {{ with (eq .Site.Params.Terminal.schema "gruvbox_light") }} {{- $terminal_style = resources.Get "sass/gruvbox_light.scss" | resources.ToCSS | minify -}} {{ end }}  */}}
 {{/*  {{ with (eq .Site.Params.Terminal.schema "gruvbox_dark") }} {{- $terminal_style = resources.Get "sass/gruvbox_dark.scss" | resources.ToCSS | minify -}} {{ end }}  */}}
 {{/*  {{ with (eq .Site.Params.Terminal.schema "solarized_light") }} {{- $terminal_style = resources.Get "sass/solarized_light.scss" | resources.ToCSS | minify -}} {{ end }}  */}}
 {{/*  {{ with (eq .Site.Params.Terminal.schema "solarized_dark") }} {{- $terminal_style = resources.Get "sass/solarized_dark.scss" | resources.ToCSS | minify -}} {{ end }}  */}}
-{{ with (eq .Site.Params.Terminal.schema "ubuntu") }} 
+{{ with (eq .Site.Params.Terminal.schema "shell-ubuntu") }} 
     {{- $terminal_style = resources.Get "sass/ubuntu.scss" | resources.ToCSS | minify -}}
     {{- $terminal_style = $terminal_style.Content -}}
 {{ end }}
-{{ with (eq .Site.Params.Terminal.schema "retro") }}
+{{ with (eq .Site.Params.Terminal.schema "shell-retro") }}
     {{- $terminal_style = resources.Get "sass/retro.scss" | resources.ToCSS | minify -}}
     {{- $terminal_style = $terminal_style.Content -}}
 {{ end }}
