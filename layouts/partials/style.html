@@ -8,15 +8,33 @@
 {{ end }}
 
 {{ $terminal_style := resources.Get "sass/white.scss" }}
-{{ with (eq .Site.Params.Terminal.schema "monokai") }} {{- $terminal_style = resources.Get "sass/monokai.scss" | resources.ToCSS | minify -}} {{ end }}
-{{ with (eq .Site.Params.Terminal.schema "powershell") }} {{- $terminal_style = resources.Get "sass/powershell.scss" | resources.ToCSS | minify -}} {{ end }}
-{{ with (eq .Site.Params.Terminal.schema "gruvbox_light") }} {{- $terminal_style = resources.Get "sass/gruvbox_light.scss" | resources.ToCSS | minify -}} {{ end }}
-{{ with (eq .Site.Params.Terminal.schema "gruvbox_dark") }} {{- $terminal_style = resources.Get "sass/gruvbox_dark.scss" | resources.ToCSS | minify -}} {{ end }}
-{{ with (eq .Site.Params.Terminal.schema "solarized_light") }} {{- $terminal_style = resources.Get "sass/solarized_light.scss" | resources.ToCSS | minify -}} {{ end }}
-{{ with (eq .Site.Params.Terminal.schema "solarized_dark") }} {{- $terminal_style = resources.Get "sass/solarized_dark.scss" | resources.ToCSS | minify -}} {{ end }}
-{{ with (eq .Site.Params.Terminal.schema "ubuntu") }} {{- $terminal_style = resources.Get "sass/ubuntu.scss" | resources.ToCSS | minify -}} {{ end }}
-{{ with (eq .Site.Params.Terminal.schema "retro") }} {{- $terminal_style = resources.Get "sass/retro.scss" | resources.ToCSS | minify -}} {{ end }}
-{{ with (eq .Site.Params.Terminal.schema "goph") }} {{- $terminal_style = resources.Get "sass/goph.scss" | resources.ToCSS | minify -}} {{ end }}
+{{/*  {{ with (eq .Site.Params.Terminal.schema "monokai") }} {{- $terminal_style = resources.Get "sass/monokai.scss" | resources.ToCSS | minify -}} {{ end }}  */}}
+{{/*  {{ with (eq .Site.Params.Terminal.schema "powershell") }} {{- $terminal_style = resources.Get "sass/powershell.scss" | resources.ToCSS | minify -}} {{ end }}  */}}
+{{/*  {{ with (eq .Site.Params.Terminal.schema "gruvbox_light") }} {{- $terminal_style = resources.Get "sass/gruvbox_light.scss" | resources.ToCSS | minify -}} {{ end }}  */}}
+{{/*  {{ with (eq .Site.Params.Terminal.schema "gruvbox_dark") }} {{- $terminal_style = resources.Get "sass/gruvbox_dark.scss" | resources.ToCSS | minify -}} {{ end }}  */}}
+{{/*  {{ with (eq .Site.Params.Terminal.schema "solarized_light") }} {{- $terminal_style = resources.Get "sass/solarized_light.scss" | resources.ToCSS | minify -}} {{ end }}  */}}
+{{/*  {{ with (eq .Site.Params.Terminal.schema "solarized_dark") }} {{- $terminal_style = resources.Get "sass/solarized_dark.scss" | resources.ToCSS | minify -}} {{ end }}  */}}
+{{ with (eq .Site.Params.Terminal.schema "ubuntu") }} 
+    {{- $terminal_style = resources.Get "sass/ubuntu.scss" | resources.ToCSS | minify -}}
+    {{- $terminal_style = $terminal_style.Content -}}
+{{ end }}
+{{ with (eq .Site.Params.Terminal.schema "retro") }}
+    {{- $terminal_style = resources.Get "sass/retro.scss" | resources.ToCSS | minify -}}
+    {{- $terminal_style = $terminal_style.Content -}}
+{{ end }}
+{{/*  {{ with (eq .Site.Params.Terminal.schema "goph") }} {{- $terminal_style = resources.Get "sass/goph.scss" | resources.ToCSS | minify -}} {{ end }}  */}}
 
-{{- $terminal_style.Content | safeCSS -}}
+{{/*  Assume that ubuntu and retro do not exist in gogh.  */}}
+{{ $themeData := getJSON "https://raw.githubusercontent.com/Mayccoll/Gogh/master/data/themes.json" }}
+{{ range $t := $themeData.themes }}
+    {{if eq $t.name $.Site.Params.Terminal.schema }}
+        {{ $terminal_style = printf "body{background:%s}body #terminal{color:%s}body #user{color:%s}body #dir{color:%s}body .Typewriter__cursor{color:%s}a{color:%s}" $t.background $t.cursorColor $t.green $t.blue $t.cursorColor $t.cursorColor | safeCSS }}
+    {{ end }}
+{{ end }}
+
+{{/*  {{- $terminal_style.Content | safeCSS -}}  */}}
+{{ $terminal_style | safeCSS }}
+
 </style>
+
+
