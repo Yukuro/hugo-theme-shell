@@ -11,8 +11,8 @@ ignoreErrors = ["error-remote-getjson"]
   [Params.Terminal]
   # Note: color scheme
   # Note: You can choose between
-  # Note: ["monokai", "powershell", "gruvbox_light", "gruvbox_dark", "solarized_light", "solarized_dark", "ubuntu", "retro"]
-  # Note: If you want to use the Goph theme, set it to "goph" (See README.md)
+  # Note: hugo-theme-shell original: ["shell-powershell", "shell-ubuntu", "shell-retro"]
+  # Note: gogh theme: https://mayccoll.github.io/Gogh/
   scheme = "Molokai"
 
   # Note: in terminal
