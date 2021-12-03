@@ -70,7 +70,7 @@ hugo-theme-shell supports the [Mayccoll/Gogh](https://github.com/Mayccoll/Gogh) 
   ```
 
 #### Note
-Most of the themes used in hugo v0.1.5 and earlier have been deprecated with the introduction of gogh theme.  
+Most of the themes used in hugo v0.1.5 and earlier have been deprecated with the introduction of Mayccoll/Gogh theme.  
 See [here](https://github.com/Yukuro/hugo-theme-shell/blob/master/docs/shell_to_gogh.md) for details.  
 
 ## Configuration
