@@ -1,4 +1,5 @@
 # Migration Guide from shell to gogh
+Most of the themes used in hugo v0.1.5 and earlier have been deprecated with the introduction of gogh theme.  
 
 ### "scheme" in config.coml
 | hugo-shell-theme ~v0.1.5 | gogh theme     | 

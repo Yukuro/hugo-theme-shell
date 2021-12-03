@@ -8,30 +8,31 @@ Terminal-like theme with selectable color schemes.
 
 ## Features
 - Terminal-like portfolio
-    - Selectable color schemes
-        - `monokai`
-        ![monokai](https://raw.githubusercontent.com/Yukuro/hugo-theme-shell/master/images/monokai.png)
+- Selectable color schemes
+  - [Mayccoll/Gogh](https://github.com/Mayccoll/Gogh) theme
+    - `Molokai`  
+    ![Molokai](https://raw.githubusercontent.com/Yukuro/hugo-theme-shell/master/images/v0.1.6/Molokai.png)
 
-        - `powershell`
-        ![powershell](https://raw.githubusercontent.com/Yukuro/hugo-theme-shell/master/images/powershell.png)
+    - `Dracula`  
+    ![Dracula](https://raw.githubusercontent.com/Yukuro/hugo-theme-shell/master/images/v0.1.6/Dracula.png)
 
-        - `gruvbox_light`
-        ![gruvbox_light](https://raw.githubusercontent.com/Yukuro/hugo-theme-shell/master/images/gruvbox_light.png)
+    - `Gruvbox`  
+    ![Gruvbox](https://raw.githubusercontent.com/Yukuro/hugo-theme-shell/master/images/v0.1.6/Gruvbox.png)
 
-        - `gruvbox_dark`
-        ![gruvbox_dark](https://raw.githubusercontent.com/Yukuro/hugo-theme-shell/master/images/gruvbox_dark.png)
+    - `Material`  
+    ![Material](https://raw.githubusercontent.com/Yukuro/hugo-theme-shell/master/images/v0.1.6/Material.png)
 
-        - `solarized_light`
-        ![solarized_light](https://raw.githubusercontent.com/Yukuro/hugo-theme-shell/master/images/solarized_light.png)
+    - `Tender`  
+    ![Tender](https://raw.githubusercontent.com/Yukuro/hugo-theme-shell/master/images/v0.1.6/Tender.png)
+  - hugo-shell-theme ~v0.1.5 theme
+    - `shell-powershell`  
+    ![shell-powershell](https://raw.githubusercontent.com/Yukuro/hugo-theme-shell/master/images/v0.1.6/shell-powershell.png)
 
-        - `solarized_dark`
-        ![solarized_dark](https://raw.githubusercontent.com/Yukuro/hugo-theme-shell/master/images/solarized_dark.png)
+    - `shell-ubuntu`  
+    ![shell-ubuntu](https://raw.githubusercontent.com/Yukuro/hugo-theme-shell/master/images/v0.1.6/shell-ubuntu.png)
 
-        - `ubuntu`
-        ![ubuntu](https://raw.githubusercontent.com/Yukuro/hugo-theme-shell/master/images/ubuntu.png)
-
-        - `retro`
-        ![retro](https://raw.githubusercontent.com/Yukuro/hugo-theme-shell/master/images/retro.png)
+    - `shell-retro`  
+    ![shell-retro](https://raw.githubusercontent.com/Yukuro/hugo-theme-shell/master/images/v0.1.6/shell-retro.png)
         
 - Minimal design
 - Responsive
@@ -58,19 +59,19 @@ git submodule add https://github.com/Yukuro/hugo-theme-shell.git themes/hugo-the
 hugo server -t hugo-theme-shell -w -D
 ```
 
-### How to use Goph theme
-hugo-theme-shell supports the [Goph](https://github.com/Mayccoll/Gogh) theme by using [goph-to-stylesheet](https://github.com/Yukuro/goph-to-stylesheet)
+### How to use theme
+hugo-theme-shell supports the [Mayccoll/Gogh](https://github.com/Mayccoll/Gogh) theme
 1. Choose a Goph theme : you can choose a theme [here](https://mayccoll.github.io/Gogh/).
-2. Use goph-to-stylesheet to convert to scss file
-```bash
-goph-to-stylesheet -t THEME_YOU_CHOSE -i template/shell.scss -o goph.scss
-```
-3. Copy goph.scss to `assets/sass/goph.scss`
-4. Configure your config.toml as follows
-```toml
-[Params.Terminal]
-scheme = "goph"
-```
+2. Copy the name of the theme you selected
+3. Configure your config.toml as follows
+  ```toml
+  [Params.Terminal]
+  scheme = "THEME_NAME"
+  ```
+
+#### Note
+Most of the themes used in hugo v0.1.5 and earlier have been deprecated with the introduction of gogh theme.  
+See [here](https://github.com/Yukuro/hugo-theme-shell/blob/master/docs/shell_to_gogh.md) for details.  
 
 ## Configuration
 in [config.toml](config/_default/config.toml)
@@ -81,9 +82,10 @@ in [config.toml](config/_default/config.toml)
   [Params.Terminal]
   # Note: color scheme
   # Note: You can choose between
-  # Note: ["monokai", "powershell", "gruvbox_light", "gruvbox_dark", "solarized_light", "solarized_dark", "ubuntu", "retro"]
-  # Note: If you want to use the Goph theme, set it to "goph" (See README.md)
-  scheme = "monokai"
+  # Note: hugo-theme-shell original: ["shell-powershell", "shell-ubuntu", "shell-retro"]
+  # Note: or
+  # Note: gogh theme: https://mayccoll.github.io/Gogh/
+  scheme = "Molokai"
 
   # Note: in terminal
   # [userName]@[pcName]:~/$ cd [workDir]
