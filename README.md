@@ -3,5 +3,7 @@
 # Hugo Theme: Shell
 
 ![submissionimage1](submission1.png)
+![submissionimage1.5](submission1.5.png)
 ![submissionimage2](submission2.png)
 ![submissionimage3](submission3.png)
+![submissionimage4](submission4.png)
