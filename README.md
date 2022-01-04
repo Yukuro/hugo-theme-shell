@@ -15,7 +15,7 @@ This fork lets you list pages, use a navbar, and add a custom visual extension t
 The `home` link in the navbar takes you to the root of the website(the `jane@laptop` page), and the link immediately after the black divider takes you to the previous directory.
   - The text for the "back" link is the path of the previous directory
   - For example: if you're at `/dir1/dir2/dir3/post.md`, the "back" button will look like this:
-    [/dir1/dir2/dir3]($baseurlOrLocalhostAddress/dir1/dir2/dir3)
+    [https://www.example.org]($baseurlOrLocalhostAddress/dir1/dir2/dir3)
     and will take you to the previous directory(the directory you're in, or `dir3`)
 
 ## Visual Explanation:
