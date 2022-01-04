@@ -7,5 +7,10 @@
         {{- block "main" . }}{{- end }}
         </div>
         {{- partial "footer.html" . -}}
+        
+        {{ if .Site.Params.Navbar.use }}
+            {{- partial "navbar.html" . -}} 
+        {{ end }}
+        
     </body>
 </html>
