@@ -6,6 +6,14 @@ title = "Shell"
 ignoreErrors = ["error-remote-getjson"]
 
 [Params]
+
+  [Params.Navbar]
+  use = true
+  
+  [Params.Extensions]
+  use = true
+  ext = ".txt" # extension to add after single pages
+    
   # Note: This is for the meta description, which is different from the "description" displayed in the terminal.
   description = "Jane Doe's Portfolio!"
   [Params.Terminal]
