@@ -1,0 +1,16 @@
+<span class="navFull">
+        <!-- left-most part of navbar -->
+    {{ $lengthToCut := mul -1 (add (len .Title) 1) }}
+    {{ $string := substr .RelPermalink 0 $lengthToCut }}
+    {{ if not .IsHome}}
+        {{ partial "navLinks.html" $string }}
+    {{ else }}
+        {{ partial "navLinks.html" "/" }}
+    {{ end }}
+
+        <!-- right-most part of navbar -->
+        <span class="navCredits">
+            Hugo theme created by
+            <a href="https://github.com/Yukuro/hugo-theme-shell" target="_blank" rel="noopener">Yukuro</a>
+        </span>
+</span>

@@ -1,3 +1,5 @@
+# Fork of [hugo-theme-shell](https://github.com/Yukuro/hugo-theme-shell) with a navbar at the bottom
+
 # Hugo Theme: Shell
 Terminal-like theme with selectable color schemes.
 
