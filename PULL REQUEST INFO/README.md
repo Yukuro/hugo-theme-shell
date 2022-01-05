@@ -1,5 +1,13 @@
 # Fork of [hugo-theme-shell](https://github.com/Yukuro/hugo-theme-shell) with a navbar at the bottom, a `list.html` page, and optional visual extensions
 
+## Demo:
+[https://n00bzunit3d.xyz/](https://n00bzunit3d.xyz/)(My ctf team's website)
+
+## Background:
+Hi! I've been using this theme for a website I'm working on and ended up making a small navbar that I thought looked pretty cool. To look a bit more "techy", I wrote Hugo code to add ".txt" to single pages(now available for any extension/general appending) and added a simple 'list.html' for general usability. I wrote some documentation, took out the hacky workarounds, and voila!
+
+*The CHANGES file lists all the additions I made and where I made them, so aside from this directory, that should cover all of the merge differences.
+
 ## Explanation:
 This fork lets you list pages, use a navbar, and add a custom visual extension to your site.
 `config.toml` should have a section that reads like:
