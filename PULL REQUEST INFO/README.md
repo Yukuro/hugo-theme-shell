@@ -11,14 +11,14 @@ Hi! I've been using this theme for a website I'm working on and ended up making 
 ## Explanation:
 This fork lets you list pages, use a navbar, and add a custom visual extension to your site.
 `config.toml` should have a section that reads like:
-``
+```
 [Params.Navbar]
   use = true
   
 [Params.Extensions]
   use = true
   ext = ".txt" # extension to add after single page
-``
+```
 
 The `home` link in the navbar takes you to the root of the website(the `jane@laptop` page), and the link immediately after the black divider takes you to the previous directory.
   - The text for the "back" link is the path of the previous directory
