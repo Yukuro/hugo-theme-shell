@@ -3,6 +3,8 @@
 ## Demo:
 [https://n00bzunit3d.xyz/](https://n00bzunit3d.xyz/)(My ctf team's website)
 
+___Note: Above, the "back" link text displays where you actually are(current list or single page), but this fork uses the path of the previous directory as the text instead___
+
 ## Background:
 Hi! I've been using this theme for a website I'm working on and ended up making a small navbar that I thought looked pretty cool. To look a bit more "techy", I wrote Hugo code to add ".txt" to single pages(now available for any extension/general appending) and added a simple 'list.html' for general usability. I wrote some documentation, took out the hacky workarounds, and voila!
 
