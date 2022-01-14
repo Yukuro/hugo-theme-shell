@@ -59,6 +59,14 @@ git submodule add https://github.com/Yukuro/hugo-theme-shell.git themes/hugo-the
 hugo server -t hugo-theme-shell -w -D
 ```
 
+#### Note: How to use stable version
+After running `git submodule add`, do the following
+```bash
+cd themes/hugo-theme-shell
+git checkout TAG_FOR_STABLE_VERSION
+```
+`TAG_FOR_STABLE_VERSION` : The stable version tag can be found on the [release page of my repository](https://github.com/Yukuro/hugo-theme-shell/releases) (i.e. `v0.1.5`, `v0.1.4` ...etc).
+
 ### How to use theme
 hugo-theme-shell supports the [Mayccoll/Gogh](https://github.com/Mayccoll/Gogh) theme
 1. Choose a Goph theme : you can choose a theme [here](https://mayccoll.github.io/Gogh/).
