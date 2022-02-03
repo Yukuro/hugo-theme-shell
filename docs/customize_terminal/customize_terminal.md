@@ -32,9 +32,9 @@ In order to customize the terminal, you need to edit the following files
 
 Copy it to `mysite/layouts`
 ```bash
-$mkdir -p ./layouts/partials
-$cp ./themes/hugo-theme-shell/layouts/index.html
-$cp ./themes/hugo-theme-shell/partials/typeIndex.html
+$ mkdir -p ./layouts/partials
+$ cp themes/hugo-theme-shell/layouts/index.html layouts/partials
+$ cp themes/hugo-theme-shell/partials/typeIndex.html layouts/partials
 ```
 
 ## 2. Edit file
