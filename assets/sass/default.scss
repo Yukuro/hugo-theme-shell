@@ -49,7 +49,7 @@ body {
         animation: blink 500ms linear infinite alternate;
 }
 
-#ps1_01, #cd, #ps1_02, #cat, #std_out_01, #ps1_03, #std_out_02, #ps1_04 {
+#cd, #whoami, #cat, #tree {
     &:after {
         @extend .cursor;
     }
