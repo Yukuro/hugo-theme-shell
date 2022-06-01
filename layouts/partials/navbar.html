@@ -1,6 +1,6 @@
 <span class="navFull">
         <!-- left-most part of navbar -->
-    {{ $lengthToCut := mul -1 (add (len .File.BaseFileName) 1) }}
+    {{ $lengthToCut := mul -1 (add (len .Type) 1) }}
     {{ $string := substr .RelPermalink 0 $lengthToCut }}
 
     {{ if .IsPage }}
