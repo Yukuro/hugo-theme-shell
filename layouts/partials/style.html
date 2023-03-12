@@ -28,10 +28,10 @@
 {{/*  {{ with (eq .Site.Params.Terminal.scheme "goph") }} {{- $terminal_style = resources.Get "sass/goph.scss" | resources.ToCSS | minify -}} {{ end }}  */}}
 
 {{/*  Assume that ubuntu and retro do not exist in gogh.  */}}
-{{ $themeData := getJSON "https://raw.githubusercontent.com/Mayccoll/Gogh/master/data/themes.json" }}
+{{ $themeData := getJSON "https://raw.githubusercontent.com/Gogh-Co/Gogh/master/data/themes.json" }}
 {{ range $t := $themeData.themes }}
     {{if eq $t.name $.Site.Params.Terminal.scheme }}
-        {{ $terminal_style = printf "body{background:%s}body #terminal{color:%s}body #user{color:%s}body #dir{color:%s}body .Typewriter__cursor{color:%s}a{color:%s}" $t.background $t.cursorColor $t.green $t.blue $t.cursorColor $t.cursorColor | safeCSS }}
+        {{ $terminal_style = printf "body{background:%s}body #terminal{color:%s}body #user{color:%s}body #dir{color:%s}body .Typewriter__cursor{color:%s}a{color:%s}" $t.background $t.cursor $t.color_03 $t.color_05 $t.cursor $t.cursor | safeCSS }}
     {{ end }}
 {{ end }}
 
