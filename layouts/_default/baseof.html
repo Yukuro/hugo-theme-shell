@@ -7,13 +7,5 @@
         {{- block "main" . }}{{- end }}
         </div>
         {{- partial "footer.html" . -}}
-
-        <!--  Additions start here -->
-        
-        {{ if .Site.Params.Navbar.use }}
-            {{- partial "navbar.html" . -}} 
-        {{ end }}
-        
-        <!-- Additions stop here --> 
     </body>
 </html>
