@@ -27,7 +27,7 @@ jobs:
           path: ./testenv/themes/hugo-theme-shell
 
       - name: Build
-        run: hugo --minify
+        run: hugo --minify -t hugo-theme-shell
         working-directory: ./testenv
 
       - name: Deploy
