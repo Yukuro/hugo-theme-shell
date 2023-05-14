@@ -24,7 +24,7 @@ jobs:
       - name: Set theme
         uses: actions/checkout@v3
         with:
-          path: ./testenv/theme/hugo-theme-shell
+          path: ./testenv/themes/hugo-theme-shell
 
       - name: Build
         run: hugo --minify
