@@ -35,17 +35,14 @@ jobs:
         run: hugo --minify -t hugo-theme-shell
         working-directory: ./testenv
 
-      - name: Change Vercel Working Directory
-        run: vercel --cwd ./testenv --token=${{ secrets.VERCEL_TOKEN }}
-
       - name: Pull Vercel Environment Information
-        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }} --cwd ./testenv
 
       - name: Build Project Artifacts
-        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }} --cwd ./testenv
 
       - name: Deploy Project Artifacts to Vercel
-        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
+        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }} --cwd ./testenv
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
