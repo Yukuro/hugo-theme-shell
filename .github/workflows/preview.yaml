@@ -1,10 +1,11 @@
 name: GitHub Pages
-
+env:
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 on:
   push:
     branches:
       - master
-  pull_request:
 
 jobs:
   deploy:
@@ -18,6 +19,9 @@ jobs:
           hugo-version: 'latest'
           extended: true
 
+      - name: Install Vercel CLI
+        run: npm install --global vercel@latest
+
       - name: SetUp Env
         run: hugo new site testenv
 
@@ -29,6 +33,18 @@ jobs:
       - name: Build
         run: hugo --minify -t hugo-theme-shell
         working-directory: ./testenv
+
+      - name: Change Vercel Working Directory
+        run: vercel --cwd ./testenv --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Pull Vercel Environment Information
+        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Build Project Artifacts
+        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Deploy Project Artifacts to Vercel
+        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
