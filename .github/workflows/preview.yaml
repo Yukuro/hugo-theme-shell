@@ -6,7 +6,6 @@ on:
   push:
     branches:
       - master
-  pull_request:
 
 jobs:
   deploy:
@@ -36,7 +35,7 @@ jobs:
         working-directory: ./testenv
 
       - name: Change Vercel Working Directory
-        run: vercel --cwd ./testenv
+        run: vercel --cwd ./testenv --token=${{ secrets.VERCEL_TOKEN }}
 
       - name: Pull Vercel Environment Information
         run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
