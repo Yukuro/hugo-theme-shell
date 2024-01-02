@@ -42,12 +42,10 @@ jobs:
         run: vercel build --token=${{ secrets.VERCEL_TOKEN }} --cwd ./testenv
 
       - name: Deploy Project Artifacts to Vercel
-        if: ${{ github.ref == 'refs/heads/master' }}
         run: vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }} --cwd ./testenv
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
-        if: ${{ github.ref == 'refs/heads/master' }}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./testenv/public
