@@ -63,7 +63,7 @@ hugo server -w -D
 
 ### How to use theme
 hugo-theme-shell supports the [Mayccoll/Gogh](https://github.com/Mayccoll/Gogh) theme
-1. Choose a Goph theme : you can choose a theme [here](https://mayccoll.github.io/Gogh/).
+1. Choose a Goph theme : you can choose a theme [here](https://gogh-co.github.io/Gogh/).
 2. Copy the name of the theme you selected
 3. Configure your config.toml as follows
   ```toml
