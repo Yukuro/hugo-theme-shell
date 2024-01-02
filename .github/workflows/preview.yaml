@@ -20,6 +20,11 @@ jobs:
           hugo-version: 'latest'
           extended: true
 
+      - name: Setup Go
+        uses: actions/setup-go@v4.0.0
+        with:
+          go-version: '^1.21'
+
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
 
