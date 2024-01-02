@@ -8,7 +8,7 @@ on:
       - master
 
 jobs:
-  deploy:
+  deploy-production:
     runs-on: ubuntu-latest
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}

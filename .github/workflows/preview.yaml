@@ -9,7 +9,7 @@ on:
   pull_request:
 
 jobs:
-  deploy:
+  deploy-preview:
     runs-on: ubuntu-latest
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
