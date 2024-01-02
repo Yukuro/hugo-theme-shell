@@ -44,32 +44,26 @@ Terminal-like theme with selectable color schemes.
 
 ## Installation
 ### Create a new website from scratch
+1. Create a website and initialize Hugo Module
 ```bash
 hugo new site myportfolio
 cd myportfolio
-git init
-git submodule add https://github.com/Yukuro/hugo-theme-shell.git themes/hugo-theme-shell
-hugo server -t hugo-theme-shell -w -D
+hugo mod init github.com/YOUR_USERNAME/myportfolio
 ```
-
-### Apply to an existing site
+2. Edit `hugo.toml`
+```toml
+[module]
+[[module.imports]]
+    path = 'github.com/yukuro/hugo-theme-shell'
+```
+3. Launch hugo server
 ```bash
-cd myportfolio
-git submodule add https://github.com/Yukuro/hugo-theme-shell.git themes/hugo-theme-shell
-hugo server -t hugo-theme-shell -w -D
+hugo server -w -D
 ```
-
-#### Note: How to use stable version
-After running `git submodule add`, do the following
-```bash
-cd themes/hugo-theme-shell
-git checkout TAG_FOR_STABLE_VERSION
-```
-`TAG_FOR_STABLE_VERSION` : The stable version tag can be found on the [release page of my repository](https://github.com/Yukuro/hugo-theme-shell/releases) (i.e. `v0.1.5`, `v0.1.4` ...etc).
 
 ### How to use theme
 hugo-theme-shell supports the [Mayccoll/Gogh](https://github.com/Mayccoll/Gogh) theme
-1. Choose a Goph theme : you can choose a theme [here](https://mayccoll.github.io/Gogh/).
+1. Choose a Goph theme : you can choose a theme [here](https://gogh-co.github.io/Gogh/).
 2. Copy the name of the theme you selected
 3. Configure your config.toml as follows
   ```toml
