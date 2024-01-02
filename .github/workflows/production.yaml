@@ -4,9 +4,8 @@ env:
   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 on:
   push:
-    branches-ignore:
+    branches:
       - master
-  pull_request:
 
 jobs:
   deploy:
@@ -36,14 +35,14 @@ jobs:
         working-directory: ./testenv
 
       - name: Pull Vercel Environment Information
-        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }} --cwd ./testenv
+        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }} --cwd ./testenv
 
       - name: Build Project Artifacts
-        run: vercel build --token=${{ secrets.VERCEL_TOKEN }} --cwd ./testenv
+        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }} --cwd ./testenv
 
       - name: Deploy Project Artifacts to Vercel
         if: ${{ github.ref == 'refs/heads/master' }}
-        run: vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }} --cwd ./testenv
+        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }} --cwd ./testenv
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
