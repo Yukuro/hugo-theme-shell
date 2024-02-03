@@ -1,0 +1,36 @@
+name: only-build
+on:
+  workflow_dispatch:
+    branches:
+      - master
+  schedule:
+    - cron: '0 3 * * *'
+
+jobs:
+  build-hugo:
+    runs-on: ubuntu-latest
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+    steps:
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
+          extended: true
+
+      - name: Setup Go
+        uses: actions/setup-go@v4.0.0
+        with:
+          go-version: '^1.21'
+
+      - name: SetUp Env
+        run: hugo new site testenv
+
+      - name: Set theme
+        uses: actions/checkout@v3
+        with:
+          path: ./testenv/themes/hugo-theme-shell
+
+      - name: Build
+        run: hugo --minify -t hugo-theme-shell
+        working-directory: ./testenv
