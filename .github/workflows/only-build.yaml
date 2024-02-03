@@ -1,5 +1,8 @@
 name: only-build
 on:
+  workflow_dispatch:
+    branches:
+      - master
   schedule:
     - cron: '0 3 * * *'
 
